@@ -1,5 +1,5 @@
 require_relative 'udacidata'
-require_relative '../data/seeds'
+
 
 class Product < Udacidata
   attr_reader :id, :price, :brand, :name

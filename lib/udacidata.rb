@@ -38,5 +38,10 @@ class Udacidata
   
   def self.find(id)
     result = self.all.find { |product| product.id == id }
+    return result
   end
+  
+#   def self.destroy(id)
+#     
+#   end
 end
