@@ -38,5 +38,14 @@ class Udacidata
   
   def self.find(id)
     result = self.all.find { |product| product.id == id }
+    result
+  end
+  
+  def self.destroy(id)
+    db = CSV.table(@@data_path)
+    item = find(id)
+    db.delete_if { |item| item[:id] == id } 
+    File.open(@@data_path, "w") { |save| save.write(db.to_csv) }
+    item
   end
 end
