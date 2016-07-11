@@ -6,7 +6,10 @@ include Analyzable
 
 # Uncomment the following code once ALL your tests have passed!
 
-# db_create
+db_create
+db_seed
+new = Product.create(id: 12, brand: "Udacity", name: "yoyo", price: 10.00)
+p Product.all
 #
 # puts "-------------------"
 # puts "RETURN ALL PRODUCTS"
