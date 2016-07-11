@@ -48,5 +48,10 @@ class Udacidata
     db.delete_if { |item| item[:id] == id } 
     File.open(@@data_path, "w") { |save| save.write(db.to_csv) }
     item
-  end 
+  end
+  
+  def self.where(value)
+    result = self.all.select { |product| product.brand == value || product.name == value }
+    result 
+  end
 end
