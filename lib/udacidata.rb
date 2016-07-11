@@ -31,7 +31,8 @@ class Udacidata
     result.length == 1 ? result[0] : result
   end
   
-  def self.last
-    self.all.last
+  def self.last(n=1)
+    result = self.all.last(n)
+    result.length == 1 ? result[0] : result
   end
 end
