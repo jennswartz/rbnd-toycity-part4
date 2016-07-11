@@ -19,10 +19,10 @@ class Udacidata
   end
   
   def self.all
-    array = []
+    all_array = []
     CSV.foreach(@@data_path, headers: true) do |products|
-      array << self.new(id: products["id"], brand: products["brand"], name: products["product"], price: products["price"])
+      all_array << self.new(id: products["id"], brand: products["brand"], name: products["product"], price: products["price"])
     end
-    return array
+    all_array
   end 
 end
