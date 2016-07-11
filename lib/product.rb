@@ -1,6 +1,5 @@
 require_relative 'udacidata'
 
-
 class Product < Udacidata
   attr_reader :id, :price, :brand, :name
 
