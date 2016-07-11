@@ -21,7 +21,6 @@ class Udacidata
   
   def self.all
     array = []
-#    data = CSV.read(@@data_path).drop(1)
     CSV.foreach(@@data_path, headers: true) do |products|
       array << self.new(id: products["id"].to_i, brand: products["brand"], name: products["product"], price: products["price"].to_i)
     end
