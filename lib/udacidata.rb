@@ -35,4 +35,8 @@ class Udacidata
     result = self.all.last(n)
     result.length == 1 ? result[0] : result
   end
+  
+  def self.find(id)
+    result = self.all.find { |product| product.id == id }
+  end
 end
