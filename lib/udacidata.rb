@@ -20,9 +20,14 @@ class Udacidata
   
   def self.all
     all_array = []
-    CSV.foreach(@@data_path, headers: true) do |products|
+    CSV.foreach(@@data_path, headers: true, converters: :all) do |products|
       all_array << self.new(id: products["id"], brand: products["brand"], name: products["product"], price: products["price"])
     end
     all_array
   end 
+  
+  def self.first(n=1)
+    result = self.all.first(n)
+    result.length == 1 ? result[0] : result
+  end
 end
