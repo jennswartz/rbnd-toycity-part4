@@ -30,4 +30,8 @@ class Udacidata
     result = self.all.first(n)
     result.length == 1 ? result[0] : result
   end
+  
+  def self.last
+    self.all.last
+  end
 end
