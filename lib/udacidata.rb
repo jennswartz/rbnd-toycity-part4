@@ -8,13 +8,9 @@ class Udacidata
   @@data_path = File.dirname(__FILE__) + "/../data/data.csv"
 
   def self.create(attributes = nil)
-    if attributes[:id]
-      self.new(attributes)
-    else 
       item = self.new(attributes)
-      CSV.open(@@data_path, "ab") do |csv|
+      CSV.open(@@data_path, "a+") do |csv|
         csv << [item.id, item.brand, item.name, item.price]
-      end
       item
     end
   end
@@ -54,4 +50,17 @@ class Udacidata
     result = self.all.select { |product| product.brand == value || product.name == value }
     result 
   end
+  
+  def update(attributes = {}) 
+    Product.destroy(self.id)
+    new_brand = attributes[:brand] ? attributes[:brand] : brand
+    new_name = attributes[:name] ? attributes[:name] : name
+    new_price = attributes[:price] ? attributes[:price] : price
+    new_product = Product.create(id: self.id, brand: new_brand, name: new_name, price: new_price)
+#    CSV.open(@@data_path, "ab") do |csv|
+#        csv << [id: self.id, brand: new_brand, name: new_name, price: new_price]
+    
+  end
+#    self.class.create(id: self.id, brand: new_brand, name: new_name, price: new_price)  
+
 end
