@@ -46,9 +46,14 @@ class Udacidata
     item
   end
   
-  def self.where(value)
-    result = self.all.select { |product| product.brand == value || product.name == value }
-    result 
+  def self.where(value={})
+    selection = []
+    if value[:brand]
+      selection = self.all.select { |product| product.brand == value[:brand] } 
+    elsif value[:name]
+      selection = self.all.select { |product| product.name == value[:name] }
+    end
+    return selection
   end
   
   def update(attributes = {}) 
