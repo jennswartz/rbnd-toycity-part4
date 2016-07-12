@@ -39,7 +39,7 @@ class Udacidata
   end
   
   def self.destroy(id)
-    db = CSV.table(@@data_path)
+    db = CSV.table(@@data_path, headers: true)
     item = find(id)
     db.delete_if { |item| item[:id] == id } 
     File.open(@@data_path, "w") { |save| save.write(db.to_csv) }
@@ -52,15 +52,10 @@ class Udacidata
   end
   
   def update(attributes = {}) 
-    Product.destroy(self.id)
+    self.class.destroy(self.id)
     new_brand = attributes[:brand] ? attributes[:brand] : brand
     new_name = attributes[:name] ? attributes[:name] : name
     new_price = attributes[:price] ? attributes[:price] : price
-    new_product = Product.create(id: self.id, brand: new_brand, name: new_name, price: new_price)
-#    CSV.open(@@data_path, "ab") do |csv|
-#        csv << [id: self.id, brand: new_brand, name: new_name, price: new_price]
-    
+    self.class.create(id: self.id, brand: new_brand, name: new_name, price: new_price)
   end
-#    self.class.create(id: self.id, brand: new_brand, name: new_name, price: new_price)  
-
 end
