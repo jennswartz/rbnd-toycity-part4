@@ -30,7 +30,7 @@ puts "-------------------"
 puts "RETURN ALL PRODUCTS"
 puts "-------------------"
 print Product.all
-
+# 
 # puts "--------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR DELETE - COMMENT OUT BEFORE SUBMITTING"
 # puts "--------------------------------------------------------------"
