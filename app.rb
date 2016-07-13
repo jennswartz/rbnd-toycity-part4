@@ -24,6 +24,7 @@ print Product.create(brand: "MySoft", name: "stuffed animal", price: 2.09)
 print Product.create(brand: "AllMy", name: "yoyo", price: 1.00)
 print Product.create(brand: "Udacity", name: "doll", price: 5.99)
 
+
 puts "\n"
 puts "-------------------"
 puts "RETURN ALL PRODUCTS"
@@ -39,7 +40,7 @@ print Product.all
 # puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
 # puts "------------------------------------------------------------"
 # print Product.find(1000000000000)
-#
+# 
 puts
 puts "--------------------"
 puts "RETURN FIRST PRODUCT"
