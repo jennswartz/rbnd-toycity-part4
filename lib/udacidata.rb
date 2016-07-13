@@ -11,16 +11,32 @@ class Udacidata
     check_csv = CSV.open(@@data_path, headers:true, converters: :all)# , "a+") #, headers:true, converters: :all)
     item = self.new(attributes)
     check_csv.each do |row|
-      if row['id'].to_i == item.id.to_i
+      if row['id'] == item.id
         return item
       end
     end
     item = self.new(attributes)
     CSV.open(@@data_path, "a+") do |csv|
       csv << [item.id, item.brand, item.name, item.price]
-    item
     end
+    item
   end   
+
+
+#   def self.create(attributes = nil)
+#     check_csv = CSV.open(@@data_path, headers:true, converters: :all)# , "a+") #, headers:true, converters: :all)
+#     item = self.new(attributes)
+#     check_csv.each do |row|
+#       if row['id'].to_i == item.id.to_i
+#         return item
+#       end
+#     end
+#     item = self.new(attributes)
+#     CSV.open(@@data_path, "a+") do |csv|
+#       csv << [item.id, item.brand, item.name, item.price]
+#     end
+#     item
+#   end   
 # 
 #   def self.create(attributes = nil)
 #       item = self.new(attributes)

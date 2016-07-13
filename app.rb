@@ -31,6 +31,18 @@ puts "RETURN ALL PRODUCTS"
 puts "-------------------"
 print Product.all
 
+#test start
+puts "create product with ID 6 \n"
+print Product.create(id: "6", brand: "duplicate6", name: "duplicate6", price: 10.00)
+puts "create another prod\n"
+print Product.create(brand: "test7", name: "ball", price: 12.00)
+puts "create another prod\n"
+print Product.create(brand: "test8", name: "dollhouse", price: 14.40)
+puts "return all products \n"
+print Product.all
+
+#test end
+
 # puts "--------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR DELETE - COMMENT OUT BEFORE SUBMITTING"
 # puts "--------------------------------------------------------------"
@@ -41,96 +53,96 @@ print Product.all
 # puts "------------------------------------------------------------"
 # print Product.find(1000000000000)
 # 
-puts
-puts "--------------------"
-puts "RETURN FIRST PRODUCT"
-puts "--------------------"
-print Product.first
-
-
-puts
-puts "-----------------------"
-puts "RETURN FIRST 2 PRODUCTS"
-puts "-----------------------"
-print Product.first(2)
-
-puts
-puts "-------------------"
-puts "RETURN LAST PRODUCT"
-puts "-------------------"
-print Product.last
-
-puts
-puts "----------------------"
-puts "RETURN LAST 2 PRODUCTS"
-puts "----------------------"
-print Product.last(2)
-
-puts
-puts "-------------------------"
-puts "DESTROY PRODUCT WITH ID 2"
-puts "-------------------------"
-print Product.destroy(2)
-
-puts
-puts "-------------------------------"
-puts "FIND PRODUCT 4 AND UPDATE BRAND"
-puts "-------------------------------"
-print Product.find(4).update(brand: "NewBrand")
-
-puts
-puts "--------------"
-puts "FIND PRODUCT 1"
-puts "--------------"
-print Product.find(1)
-
-puts
-puts "-----------------"
-puts "DESTROY PRODUCT 3"
-puts "-----------------"
-print Product.destroy(3)
-
-puts
-puts "-------------------------------"
-puts "RETURN PRODUCTS WITH BRAND UDACITY"
-puts "-------------------------------"
-print Product.where(brand: "Udacity")
-
-puts
-puts "-------------------------------------"
-puts "RETURN FIRST PRODUCT WITH GIVEN BRAND"
-puts "-------------------------------------"
-print Product.find_by_brand("Udacity")
-puts
-
-puts
-puts "------------------------------------"
-puts "RETURN FIRST PRODUCT WITH GIVEN NAME"
-puts "------------------------------------"
-print Product.find_by_name("yoyo")
-puts
-
-puts
-puts "----------------------------"
-puts "RETURN HASH WITH NAME COUNTS"
-puts "----------------------------"
-print Analyzable::count_by_name(Product.all)
-
-puts
-puts "----------------------------"
-puts "RETURN HASH WITH BRAND COUNTS"
-puts "----------------------------"
-print Analyzable::count_by_brand(Product.all)
-
-puts
-puts "--------------------"
-puts "RETURN AVERAGE PRICE"
-puts "--------------------"
-print Analyzable::average_price(Product.all)
-
-puts
-puts "--------------------"
-puts "PRINT SUMMARY REPORT"
-puts "--------------------"
-print Analyzable::print_report(Product.all)
-puts
+# puts
+# puts "--------------------"
+# puts "RETURN FIRST PRODUCT"
+# puts "--------------------"
+# print Product.first
+# 
+# 
+# puts
+# puts "-----------------------"
+# puts "RETURN FIRST 2 PRODUCTS"
+# puts "-----------------------"
+# print Product.first(2)
+# 
+# puts
+# puts "-------------------"
+# puts "RETURN LAST PRODUCT"
+# puts "-------------------"
+# print Product.last
+# 
+# puts
+# puts "----------------------"
+# puts "RETURN LAST 2 PRODUCTS"
+# puts "----------------------"
+# print Product.last(2)
+# 
+# puts
+# puts "-------------------------"
+# puts "DESTROY PRODUCT WITH ID 2"
+# puts "-------------------------"
+# print Product.destroy(2)
+# 
+# puts
+# puts "-------------------------------"
+# puts "FIND PRODUCT 4 AND UPDATE BRAND"
+# puts "-------------------------------"
+# print Product.find(4).update(brand: "NewBrand")
+# 
+# puts
+# puts "--------------"
+# puts "FIND PRODUCT 1"
+# puts "--------------"
+# print Product.find(1)
+# 
+# puts
+# puts "-----------------"
+# puts "DESTROY PRODUCT 3"
+# puts "-----------------"
+# print Product.destroy(3)
+# 
+# puts
+# puts "-------------------------------"
+# puts "RETURN PRODUCTS WITH BRAND UDACITY"
+# puts "-------------------------------"
+# print Product.where(brand: "Udacity")
+# 
+# puts
+# puts "-------------------------------------"
+# puts "RETURN FIRST PRODUCT WITH GIVEN BRAND"
+# puts "-------------------------------------"
+# print Product.find_by_brand("Udacity")
+# puts
+# 
+# puts
+# puts "------------------------------------"
+# puts "RETURN FIRST PRODUCT WITH GIVEN NAME"
+# puts "------------------------------------"
+# print Product.find_by_name("yoyo")
+# puts
+# 
+# puts
+# puts "----------------------------"
+# puts "RETURN HASH WITH NAME COUNTS"
+# puts "----------------------------"
+# print Analyzable::count_by_name(Product.all)
+# 
+# puts
+# puts "----------------------------"
+# puts "RETURN HASH WITH BRAND COUNTS"
+# puts "----------------------------"
+# print Analyzable::count_by_brand(Product.all)
+# 
+# puts
+# puts "--------------------"
+# puts "RETURN AVERAGE PRICE"
+# puts "--------------------"
+# print Analyzable::average_price(Product.all)
+# 
+# puts
+# puts "--------------------"
+# puts "PRINT SUMMARY REPORT"
+# puts "--------------------"
+# print Analyzable::print_report(Product.all)
+# puts
