@@ -7,6 +7,13 @@ include Analyzable
 # Uncomment the following code once ALL your tests have passed!
 
 # db_create
+# DELETE THESE
+# Product.create(brand: "AverageBrand", name: "Nyan Cat", price: 15.32)
+# Product.create(brand: "AverageBrand", name: "Nyan Cat", price: 18.23)
+# Product.create(brand: "AverageBrand", name: "Nyan Cat", price: 11.30)
+# Product.create(brand: "Udacity", name: "yoyo", price: 10.00)
+# Product.create(brand: "Bouncy", name: "ball", price: 12.00)
+# END DELETE
 #
 # puts "-------------------"
 # puts "RETURN ALL PRODUCTS"
