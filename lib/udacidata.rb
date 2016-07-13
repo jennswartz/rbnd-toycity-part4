@@ -35,6 +35,9 @@ class Udacidata
   
   def self.find(id)
     result = self.all.find { |product| product.id == id }
+    unless result 
+      raise ProductNotFoundError, "No product found with that id."
+    end
     result
   end
   
@@ -53,7 +56,8 @@ class Udacidata
     elsif value[:name]
       selection = self.all.select { |product| product.name == value[:name] }
     end
-    return selection
+    selection
+  #self.all.select { |product| value[:brand] == product.brand || value[:name] == product.name }
   end
   
   def update(attributes = {}) 
