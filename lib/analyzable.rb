@@ -32,7 +32,7 @@ module Analyzable
   # accept an array of Product objects and return a summary inventory report containing: 
   # average price, counts by brand, and counts by product name.
   def print_report(products)
-    report = "#{self}\n"
+    report = "Summary Report\n"
     report += "Inventory by Brand:\n"
     count_by_brand(products).each do |key, value|
       report += " - #{key}:  #{value}\n"
